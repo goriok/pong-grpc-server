@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "github.com/goriok/poc-grpc-pong/proto";
+
+package pong;
+
+message Pong {
+  string response=1;
+}
+
+message Ping {
+}
+
+service PongService {
+  rpc Create(Ping) returns (Pong);
+}

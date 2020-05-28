@@ -36,7 +36,7 @@ func main() {
         trip_time := time.Now()
         ctx, cancel := context.WithTimeout(context.Background(), time.Second)
         defer cancel()
-        r, err := c.Ping(ctx, &pb.PingRequest{Data: data})
+        r, err := c.Ping(ctx, &pb.Ping{Data: data})
         if err != nil {
             log.Fatalf("could not connect to: %v", err)
         }

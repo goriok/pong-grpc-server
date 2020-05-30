@@ -14,7 +14,7 @@ const (
 type server struct{}
 
 func (s *server) Ping(ctx context.Context, in *pb.Ping) (*pb.Pong, error) {
-    return &pb.Pong{response: "PONG"}, nil
+    return &pb.Pong{Response: "PONG"}, nil
 }
 
 func main(){
@@ -25,6 +25,6 @@ func main(){
   }
 
   s := grpc.NewServer()
-  pg.RegisterPingServiceServer(s, &server{})
+  pb.RegisterPingServiceServer(s, &server{})
   server.Serve(listener)
 }
